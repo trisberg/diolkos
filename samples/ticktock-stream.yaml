@@ -1,0 +1,14 @@
+apiVersion: extensions.diolkos.io/v1
+kind: Stream
+metadata:
+  name: ticktock
+spec:
+  dsl: 'time | log --log.level=WARN'
+  apps: 
+  - name: time
+    type: source
+  - name: log
+    type: sink
+    properties:
+    - name: log.level
+      value: 'WARN'

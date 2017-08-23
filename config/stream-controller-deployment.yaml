@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stream-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: stream-controller
+      labels:
+        app: stream-controller
+    spec:
+      containers:
+      - image: diolkos/stream-controller:v0001
+        name: stream-controller
+        imagePullPolicy: IfNotPresent

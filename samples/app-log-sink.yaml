@@ -1,0 +1,15 @@
+apiVersion: extensions.diolkos.io/v1
+kind: StreamApp
+metadata:
+  name: log-sink
+  type: sink
+spec:
+  image: springcloudstream/log-sink-rabbit:1.2.0.RELEASE
+  app-properties:
+  - name: log.expression
+    type: string
+  - name: log.level
+    type: enum
+    values: ['FATAL', 'ERROR', 'WARN', 'INFO', 'DEBUG', 'TRACE']
+  - name: log.name
+    type: string
